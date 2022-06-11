@@ -27,3 +27,13 @@ Route::view('/landingpage/pages/blogdetails', 'landingpage.pages.blogdetails');
 Route::view('/landingpage/pages/blog', 'landingpage.pages.blog');
 Route::view('/landingpage/pages/contact', 'landingpage.pages.contact');
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
