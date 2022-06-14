@@ -22,6 +22,9 @@
                         <x-jet-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
                             {{ __('Products') }}
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('dashboard.gallery.index') }}" :active="request()->routeIs('dashboard.gallery.index')">
+                            {{ __('Product Gallery') }}
+                        </x-jet-nav-link>
                     @endif
 
                 </div>
@@ -168,9 +171,12 @@
             {{-- Middleware admin --}}
 
             @if (Auth::user()->roles == 'ADMIN')
-                <x-jet-responsive-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
+                {{-- <x-jet-responsive-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
                     {{ __('Products') }}
                 </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('dashboard.gallery.index') }}" :active="request()->routeIs('dashboard.gallery.index')">
+                    {{ __('Products') }}
+                </x-jet-responsive-nav-link> --}}
             @endif
 
         </div>

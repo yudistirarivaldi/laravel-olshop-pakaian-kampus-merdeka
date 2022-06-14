@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Product &raquo; {{ $product->name }} &raquo; Gallery
+            Product  Gallery
         </h2>
     </x-slot>
 
@@ -21,6 +21,9 @@
                     {
                         data: 'url',
                         name: 'url',
+                        // "render": function (data) {
+                        //     return '<img src="img/baju/'+data+'"  height="50" width="50">';
+                        // }
                     },
                     {
                         data: 'is_featured',
@@ -44,7 +47,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="mb-10">
-                <a href="{{ route('dashboard.products.gallery.create', $product->id) }}"
+                <a href="{{ route('dashboard.gallery.create'{{-- , {$product->id} --}}) }}"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
                     Upload Photos
                 </a>

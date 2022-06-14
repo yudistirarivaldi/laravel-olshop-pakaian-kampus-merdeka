@@ -10,6 +10,8 @@ class ProductGallery extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'product_galleries';
+
     protected $fillable = [
         'product_id',
         'url',

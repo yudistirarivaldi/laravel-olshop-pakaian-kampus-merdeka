@@ -18,7 +18,24 @@ class ProductGalleryController extends Controller
      */
     public function index(Product $product)
     {
-
+        if(request()->ajax())
+        {
+            $query = ProductGallery::query();
+            return DataTables::of($query)
+            ->addColumn('action', function($item){
+                return '
+                    <form class="flex justify-center" action="'. route('dashboard.gallery.destroy', $item->id) .'" method="POST">
+                        <button class="bg-red-500 text-white  rounded-md px-2 py-1 mr-2">
+                            Hapus
+                        </button>
+                    '. method_field('delete'). csrf_field() .'
+                    </form>
+                ';
+            })
+            ->rawColumns(['action'])
+            ->make();
+        }
+        return view('pages.dashboard.gallery.index');
     }
 
     /**
@@ -39,7 +56,29 @@ class ProductGalleryController extends Controller
      */
     public function store(ProductGalleryRequest $request, Product $product)
     {
+        // masukkan foto ke db
+                // Proses input data gedung with foto
+                $request->validate([
+                    'product_id' => 'required',
+                    'is_featured' => 'required',
+                    'url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                ]);
 
+                $input = $request->all();
+
+                // logic for proses foto
+                if ($image = $request->file('url')) {
+                    $destinationPath = 'img/baju';
+                    $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                    $image->move($destinationPath, $profileImage);
+                    $input['url'] = "$profileImage";
+                }
+
+                // input create gedung function
+                ProductGallery::create($input);
+
+                // kembali ke page
+                return view('pages.dashboard.gallery.index');
     }
 
     /**
@@ -59,9 +98,12 @@ class ProductGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProductGallery $productGallery)
     {
-        //
+        // edit data from db
+        return view('pages.dashboard.gallery.edit', compact('productGallery'));
+        // dd($productGallery);
+
     }
 
     /**
@@ -71,9 +113,9 @@ class ProductGalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductGalleryRequest $request,ProductGallery $productGallery)
     {
-        //
+        // proses update product galleries
     }
 
     /**
@@ -84,6 +126,10 @@ class ProductGalleryController extends Controller
      */
     public function destroy(ProductGallery $gallery)
     {
+        $gallery->delete();
+
+        toast('Success Delete Data Gallery','success');
+        return redirect()->route('dashboard.gallery.index');
 
     }
 }
