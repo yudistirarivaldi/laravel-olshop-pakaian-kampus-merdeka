@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// route for landingpage
 Route::view('/landingpage', 'landingpage.home');
 Route::view('/', 'landingpage.home');
 Route::view('/landingpage/pages/shop', 'landingpage.pages.shop');
@@ -27,3 +28,15 @@ Route::view('/landingpage/pages/blogdetails', 'landingpage.pages.blogdetails');
 Route::view('/landingpage/pages/blog', 'landingpage.pages.blog');
 Route::view('/landingpage/pages/contact', 'landingpage.pages.contact');
 
+Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    Route::middleware(['admin'])->group(function() {
+        Route::resource('products', ProductController::class);
+        Route::resource('products.gallery', ProductGalleryController::class)->shallow()->only([
+            'index', 'create', 'store', 'destroy'
+        ]);
+        Route::resource('transaction', TransactionController::class);
+    });
+
+});
