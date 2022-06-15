@@ -59,8 +59,8 @@ class ProductGalleryController extends Controller
         // masukkan foto ke db
                 // Proses input data gedung with foto
                 $request->validate([
-                    'product_id' => 'required',
-                    'is_featured' => 'required',
+                    'product_id' => 'required|numeric',
+                    'is_featured' => 'required|numeric',
                     'url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 ]);
 
@@ -77,6 +77,7 @@ class ProductGalleryController extends Controller
                 // input create gedung function
                 ProductGallery::create($input);
 
+                toast('Success Input Data Product','success');
                 // kembali ke page
                 return view('pages.dashboard.gallery.index');
     }
