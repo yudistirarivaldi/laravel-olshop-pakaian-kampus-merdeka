@@ -28,15 +28,18 @@ Route::view('/landingpage/pages/blogdetails', 'landingpage.pages.blogdetails');
 Route::view('/landingpage/pages/blog', 'landingpage.pages.blog');
 Route::view('/landingpage/pages/contact', 'landingpage.pages.contact');
 
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('products', ProductController::class);
-        Route::resource('gallery', ProductGalleryController::class);
-        // Route::resource('products.gallery', ProductGalleryController::class)->shallow()->only([
-        //     'index', 'create', 'store', 'destroy'
-        // ]);
+        Route::resource('products.gallery', ProductGalleryController::class)->shallow()->only([
+            'index', 'create', 'store', 'destroy'
+        ]);
         Route::resource('transaction', TransactionController::class);
     });
 

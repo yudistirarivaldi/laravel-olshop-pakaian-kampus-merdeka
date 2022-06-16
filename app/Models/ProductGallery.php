@@ -8,18 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProductGallery extends Model
 {
-    use HasFactory, SoftDeletes;
-
-    protected $table = 'product_galleries';
+    use HasFactory;
 
     protected $fillable = [
         'product_id',
         'url',
         'is_featured',
     ];
-    public function product()
-    {
-        return $this->belongsTo(Product::class);
-    }
 
 }
