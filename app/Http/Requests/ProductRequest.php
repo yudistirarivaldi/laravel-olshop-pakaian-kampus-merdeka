@@ -14,6 +14,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize()
     {
+        // ngecek apakah user sudah login atau belum
         return Auth::check();
     }
 

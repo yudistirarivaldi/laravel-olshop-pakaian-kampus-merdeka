@@ -24,6 +24,12 @@
                         </x-jet-nav-link>
                     @endif
 
+                    @if (Auth::user()->roles == 'ADMIN')
+                        <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.products.index')">
+                            {{ __('Transaction') }}
+                        </x-jet-nav-link>
+                    @endif
+
                 </div>
             </div>
 
@@ -150,8 +156,8 @@
                         <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -171,6 +177,12 @@
                 <x-jet-responsive-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
                     {{ __('Products') }}
                 </x-jet-responsive-nav-link>
+            @endif
+
+            @if (Auth::user()->roles == 'ADMIN')
+                <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.products.index')">
+                    {{ __('Transaction') }}
+                </x-jet-nav-link>
             @endif
 
         </div>

@@ -62,13 +62,14 @@ class ProductGalleryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(ProductGalleryRequest $request, Product $product)
+
     {
         $files = $request->file('files');
 
         if($request->hasFile('files'))
         {
             foreach ($files as $file) {
-                $path = $file->store('/public/gallery');
+                $path = $file->store('public/storage/img/product');
 
                 ProductGallery::create([
                     'product_id' => $product->id,

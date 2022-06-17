@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class ProductGalleryRequest extends FormRequest
+class TransactionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class ProductGalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'files.*' => 'required|image'
+            'status' => 'in:PENDING,SUCCESS,FAILED,SHIPPING',
         ];
     }
 }
