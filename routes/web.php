@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 
@@ -21,15 +22,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/landingpage', 'landingpage.home');
+// route for landingpgae
+Route::view('/trixie/login', 'landingpage.components.login');
+Route::view('/trixie/register', 'landingpage.components.register');
+Route::view('/trixie', 'landingpage.home');
 Route::view('/', 'landingpage.home');
-Route::view('/landingpage/pages/shop', 'landingpage.pages.shop');
-Route::view('/landingpage/pages/productdetails', 'landingpage.pages.productdetails');
-Route::view('/landingpage/pages/shopcart', 'landingpage.pages.shopcart');
-Route::view('/landingpage/pages/checkout', 'landingpage.pages.checkout');
-Route::view('/landingpage/pages/blogdetails', 'landingpage.pages.blogdetails');
-Route::view('/landingpage/pages/blog', 'landingpage.pages.blog');
-Route::view('/landingpage/pages/contact', 'landingpage.pages.contact');
+Route::view('/success', 'landingpage.pages.success');
+// Route::view('/trixie/pages/shop', 'landingpage.pages.shop');
+Route::view('/trixie/pages/productdetails', 'landingpage.pages.productdetails');
+Route::view('/trixie/pages/shopcart', 'landingpage.pages.shopcart');
+Route::view('/trixie/pages/checkout', 'landingpage.pages.checkout');
+Route::view('/trixie/pages/blogdetails', 'landingpage.pages.blogdetails');
+Route::view('/trixie/pages/blog', 'landingpage.pages.blog');
+Route::view('/trixie/pages/contact', 'landingpage.pages.contact');
+
+//  route for shop
+Route::resource('/trixie/pages/shop', ShopController::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

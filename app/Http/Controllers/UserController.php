@@ -24,7 +24,7 @@ class UserController extends Controller
             return DataTables::of($query)
             ->addColumn('action', function($item){
                 return '
-
+                <div class="flex justify-center">
                     <a href="'. route('dashboard.user.edit', $item->id) .'" class="bg-gray-500 text-white rounded-md px-2 py-1 mr-2">
                         Edit
                     </a>
@@ -34,6 +34,7 @@ class UserController extends Controller
                         </button>
                     '. method_field('delete'). csrf_field() .'
                     </form>
+                    </div>
                 ';
             })
             ->rawColumns(['action'])

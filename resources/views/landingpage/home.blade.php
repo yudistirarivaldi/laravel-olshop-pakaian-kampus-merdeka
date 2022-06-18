@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-6 p-0">
                 <div class="categories__item categories__large__item set-bg"
-                data-setbg="{{ asset('landing/img/categories/category-1.jpg')}}">
+                data-setbg="{{ asset('landing/img/categories/category-5.jpg')}}">
                 <div class="categories__text">
                     <h1>Women’s fashion</h1>
                     <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
@@ -17,7 +17,7 @@
         </div>
         <div class="col-lg-6">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+                <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                     <div class="categories__item set-bg" data-setbg="{{ asset('landing/img/categories/category-2.jpg')}}">
                         <div class="categories__text">
                             <h4>Men’s fashion</h4>
@@ -26,29 +26,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                     <div class="categories__item set-bg" data-setbg="{{ asset('landing/img/categories/category-3.jpg')}}">
-                        <div class="categories__text">
-                            <h4>Kid’s fashion</h4>
-                            <p>273 items</p>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                    <div class="categories__item set-bg" data-setbg="{{ asset('landing/img/categories/category-4.jpg')}}">
                         <div class="categories__text">
                             <h4>Cosmetics</h4>
                             <p>159 items</p>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 p-0">
-                    <div class="categories__item set-bg" data-setbg="{{ asset('landing/img/categories/category-5.jpg')}}">
-                        <div class="categories__text">
-                            <h4>Accessories</h4>
-                            <p>792 items</p>
                             <a href="#">Shop now</a>
                         </div>
                     </div>

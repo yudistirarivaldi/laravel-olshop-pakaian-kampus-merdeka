@@ -28,7 +28,7 @@ class ProductGalleryController extends Controller
             ->addColumn('action', function($item){
                 return '
 
-                    <form class="inline-block" action="'. route('dashboard.gallery.destroy', $item->id) .'" method="POST">
+                    <form class="flex justify-center" action="'. route('dashboard.gallery.destroy', $item->id) .'" method="POST">
                         <button class="bg-red-500 text-white rounded-md px-2 py-1 mr-2">
                             Hapus
                         </button>
@@ -69,7 +69,7 @@ class ProductGalleryController extends Controller
         if($request->hasFile('files'))
         {
             foreach ($files as $file) {
-                $path = $file->store('public/storage/img/product');
+                $path = $file->store('public/img/product');
 
                 ProductGallery::create([
                     'product_id' => $product->id,

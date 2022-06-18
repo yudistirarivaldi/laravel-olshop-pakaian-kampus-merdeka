@@ -1,7 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <span class="text-3xl font-bold text-red-600">
+               <a href="{{ url('/')}}"> Trixie</a>
+            </span>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

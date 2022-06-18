@@ -12,7 +12,7 @@
                 </a></li>
         </ul>
         <div class="offcanvas__logo">
-            <a href="{{ url('/landingpage') }}"><img src="img/logo.png" alt=""></a>
+            <a href="{{ url('/trixie') }}"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
@@ -27,28 +27,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
-                    <div class="header__logo">
-                        <a href="{{ url('/landingpage') }}"><img src="img/logo.png" alt=""></a>
+                    <div class="header__logo text-header text-monospace">
+                        <a href="{{ url('/trixie') }}" class="text-logo">Trixie</a>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-7">
-                    <nav class="header__menu">
+                <div class="col-xl-6 col-lg-9">
+                    <nav class="header__menu text-center">
                         <ul>
-                            <li class="active"><a href="{{ url('/landingpage') }}">Home</a></li>
+                            <li class="active"><a href="{{ url('/trixie') }}">Home</a></li>
                             <li><a href="#">Women’s</a></li>
                             <li><a href="#">Men’s</a></li>
-                            <li><a href="{{ url('/landingpage/pages/shop') }}">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="{{ url('/landingpage/pages/productdetails') }}">Product Details</a>
-                                    </li>
-                                    <li><a href="{{ url('/landingpage/pages/shopcart') }}">Shop Cart</a></li>
-                                    <li><a href="{{ url('/landingpage/pages/checkout') }}">Checkout</a></li>
-                                    <li><a href="{{ url('/landingpage/pages/blogdetails') }}">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ url('/landingpage/pages/blog') }}">Blog</a></li>
-                            <li><a href="{{ url('/landingpage/pages/contact') }}">Contact</a></li>
+                            <li><a href="{{ url('/trixie/pages/shop') }}">Shop</a></li>
+                            <li><a href="{{ url('/trixie/pages/contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

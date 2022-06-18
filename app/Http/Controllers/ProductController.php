@@ -28,6 +28,7 @@ class ProductController extends Controller
             return DataTables::of($query)
             ->addColumn('action', function($item){
                 return '
+                <div class= "flex justify-center">
                     <a href="'. route('dashboard.products.gallery.index', $item->id) .'" class="bg-gray-800 text-white rounded-md px-2 py-1 mr-2">
                         Gallery
                     </a>
@@ -40,6 +41,7 @@ class ProductController extends Controller
                         </button>
                     '. method_field('delete'). csrf_field() .'
                     </form>
+                    </div>
                 ';
             })
             ->editColumn('price', function($item){
