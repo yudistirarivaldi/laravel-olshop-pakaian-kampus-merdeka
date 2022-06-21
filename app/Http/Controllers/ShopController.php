@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shop;
-use App\Models\Product;
-use App\Models\ProductGallery;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ShopController extends Controller
 {
-    public function index(){
-    // show data product for shop
-    $product = Product::latest()->paginate(30);
-    $productgallery = ProductGallery::all();
+    public function index(Request $request)
 
-    return view('landingpage.pages.shop', compact('product', 'productgallery'));
+    {
+
+        $products = Product::with(['galleries'])->latest()->get();
+
+        return view('landingpage.home', compact('products'));
+    }
+
+    public function details(Request $request, $slug)
+    {
+        $product = Product::with(['galleries'])->where('slug', $slug)->firstOrFail();
+        $recomendations = Product::with(['galleries'])->inRandomOrder()->limit(4)->get();
+
+        return view('landingpage.pages.productdetails', compact('product', 'recomendations'));
     }
 }

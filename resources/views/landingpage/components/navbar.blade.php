@@ -12,7 +12,7 @@
                 </a></li>
         </ul>
         <div class="offcanvas__logo">
-            <a href="{{ url('/trixie') }}"><img src="img/logo.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
@@ -28,7 +28,10 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
                     <div class="header__logo text-header text-monospace">
-                        <a href="{{ url('/trixie') }}" class="text-logo">Trixie</a>
+                        <a href="{{ route('index') }}" class="text-logo">
+                            <img src="{{ url('/landing/img/logo.png') }}" width="150px" />
+                        </a>
+                        </a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-9">
@@ -44,10 +47,30 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                        <div class="header__right__auth">
-                            <a href="{{ route('login') }}">Login</a>
-                            <a href="{{ route('register') }}">Register</a>
-                        </div>
+                        @auth
+                            <div class="header__right__auth">
+                                <a href="{{ route('login') }}">Dashboard</a>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                        class="ft-power"></i>
+                                    Logout
+
+                                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                                        @csrf
+                                    </form>
+
+                                </a>
+                            </div>
+
+                        @endauth
+                        @guest
+                            <div class="header__right__auth">
+                                <a href="{{ route('login') }}">Login</a>
+                                <a href="{{ route('register') }}">Register</a>
+                            </div>
+                        @endguest
+
+
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
                             <li><a href="#"><span class="icon_heart_alt"></span>
