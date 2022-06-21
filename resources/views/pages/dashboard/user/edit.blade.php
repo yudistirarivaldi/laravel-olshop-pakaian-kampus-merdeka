@@ -27,6 +27,12 @@
                     </div>
                 @endif
 
+                <div class="mb-4 flex justify-end">
+                    <a href="{{ route('dashboard.user.index') }}"
+                        class="bg-indigo-500 hover:bg-red-500 text-white font-bold py-2  px-4 rounded shadow-lg">
+                        back
+                        </a>
+                </div>
                 <form action="{{ route('dashboard.user.update', $user->id) }}" method="POST" class="w-full"
                     enctype="multipart/form-data">
                     @csrf

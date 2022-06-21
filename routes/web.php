@@ -22,9 +22,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//  route for shop
+//  route for landing
 Route::get('/', [ShopController::class, 'index'])->name('index');
-
+Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
+route::view('/shopcart', 'landingpage.pages.shopcart');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

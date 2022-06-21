@@ -23,4 +23,10 @@ class ShopController extends Controller
 
         return view('landingpage.pages.productdetails', compact('product', 'recomendations'));
     }
+    public function shop_list(Request $request){
+
+        $products = Product::with(['galleries'])->latest()->get();
+
+        return view('landingpage.pages.shop', compact('products'));
+    }
 }

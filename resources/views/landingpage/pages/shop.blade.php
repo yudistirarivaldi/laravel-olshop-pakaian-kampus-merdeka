@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="{{ url('/trixie')}}"><i class="fa fa-home"></i> Home</a>
+                        <a href="{{ url('/')}}"><i class="fa fa-home"></i> Home</a>
                         <span>Shop</span>
                     </div>
                 </div>
@@ -22,21 +22,21 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="row">
-                        @foreach ($productgallery as $pg)
-                        @foreach ($product as $pd)
+                        @foreach ($products as $product)
                         <div class="col-lg-3 col-md-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg">
-                                    <img src="{{ asset('storage/' . $pg->url ) }}" alt="" srcset="">
+                                    <img src="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}" alt="" srcset="">
                                     <div class="label new">New</div>
                                     <ul class="product__hover">
-                                        <li><a href="{{ asset('storage/' . $pg->url ) }}" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}" class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href="{{ route('detail', $product->slug) }}"  title="Lihat Product Details"><span class="icon_eye_alt"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        </span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{ $pd->name }}</a></h6>
+                                    <h6><a href="#">{{ $product->name }}</a></h6>
                                     <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -44,11 +44,10 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <div class="product__price">{{ "Rp ".number_format("$pd->price", 2, ",", "."); }}</div>
+                                    <div class="product__price">Rp. {{ number_format($product->price) }}</div>
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                         @endforeach
                     </div>
                 </div>

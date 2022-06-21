@@ -56,7 +56,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Photo</th>
-
                                 <th>Aksi</th>
                             </tr>
                         </thead>

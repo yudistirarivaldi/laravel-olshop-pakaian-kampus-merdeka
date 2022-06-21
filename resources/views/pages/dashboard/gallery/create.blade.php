@@ -26,11 +26,16 @@
                         </div>
                     </div>
                 @endif
-
+                <div class="mb-8 flex justify-end">
+                        <a href="{{ route('dashboard.products.gallery.index', $product->id) }}"
+                            class="bg-indigo-500 hover:bg-red-500 text-white font-bold py-2  px-4 rounded shadow-lg">
+                            back
+                            </a>
+                </div>
                 <form action="{{ route('dashboard.products.gallery.store', $product->id) }}" method="POST"
                     class="w-full" enctype="multipart/form-data">
                     @csrf
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap -mx-3  mb-6">
                         <div class="w-full px-3">
                             <label
                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>

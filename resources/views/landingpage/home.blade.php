@@ -70,9 +70,9 @@
                                 <ul class="product__hover">
                                     <li><a href="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}"
                                             class="image-popup"><span class="arrow_expand"></span></a></li>
-
-                                    <li><a href="{{ route('detail', $product->slug) }}"><span
-                                                class="icon_bag_alt"></span></a></li>
+                                    <li><a href="{{ route('detail', $product->slug) }}" title="Lihat Product Details"><span class="icon_eye_alt"><i class="fa fa-eye" aria-hidden="true"></i>
+                                            </span></a></li>
+                                    <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                 </ul>
                             </div>
                             <div class="product__item__text">
@@ -84,7 +84,7 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <div class="product__price">Rp {{ number_format($product->price) }}</div>
+                                <div class="product__price">Rp. {{ number_format($product->price) }}</div>
                             </div>
                         </div>
                     </div>
