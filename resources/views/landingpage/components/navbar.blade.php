@@ -37,10 +37,12 @@
                 <div class="col-xl-6 col-lg-9">
                     <nav class="header__menu text-center">
                         <ul>
-                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                            {{-- <li><a href="#">Women’s</a></li>
-                            <li><a href="#">Men’s</a></li> --}}
-                            <li><a href="{{ url('/shop') }}">Shop</a></li>
+
+                            <li class="{{ \Route::current()->getName() == 'index' ? 'active' : '' }}"><a
+                                    href="{{ url('/') }}">Home</a></li>
+
+                            <li class="{{ \Route::current()->getName() == 'shop_list' ? 'active' : '' }}"><a
+                                    href="{{ url('/shop') }}">Shop</a></li>
                             <li><a href="{{ url('/trixie/pages/contact') }}">Contact</a></li>
                         </ul>
                     </nav>
@@ -76,9 +78,9 @@
                             <li><a href="#"><span class="icon_heart_alt"></span>
                                     <div class="tip">2</div>
                                 </a></li>
-                            <li><a href="{{ url('/shopcart')}}">
-                                <span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
+                            <li><a href="{{ url('/shopcart') }}">
+                                    <span class="icon_bag_alt"></span>
+                                    <div class="tip">2</div>
                                 </a></li>
                         </ul>
                     </div>

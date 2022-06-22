@@ -25,12 +25,26 @@ use Illuminate\Support\Facades\Route;
 //  route for landing
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
-route::view('/shopcart', 'landingpage.pages.shopcart');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
+
+// valdiasi untuk landing jadi harus login dulu untuk mengakses route ini
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
+
+    // untuk buat order cart
+    Route::post('/cart/{id}', [ShopController::class, 'tambahCart'])->name('tambahCart');
+
+    Route::delete('/cart/{id}', [ShopController::class, 'hapusCart'])->name('hapusCart');
+
+});
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
+// Ini Route untuk dashboard
 
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
