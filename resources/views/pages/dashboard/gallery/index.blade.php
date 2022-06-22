@@ -42,11 +42,11 @@
             <div class="mb-10 flex justify-between">
                 <a href="{{ route('dashboard.products.gallery.create', $product->id) }}"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                    Upload Photos
+                    <i class="fa fa-plus" aria-hidden="true"></i> Upload Photos
                 </a>
                 <a href="{{ route('dashboard.products.index') }}"
-                    class="bg-indigo-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded shadow-lg">
-                    back
+                    class="bg-indigo-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded shadow-lg">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i> back
                 </a>
             </div>
             <div class="shadow overflow-hidden sm-rounded-md">

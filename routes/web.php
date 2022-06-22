@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //  route for landing
+Route::view('/form/transaction', 'landingpage.pages.form');
+Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
@@ -44,8 +46,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 //     return view('dashboard');
 // })->name('dashboard');
 
-// Ini Route untuk dashboard
 
+// Ini Route untuk dashboard
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 

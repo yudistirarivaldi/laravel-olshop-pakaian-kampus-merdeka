@@ -26,11 +26,11 @@ class UserController extends Controller
                 return '
                 <div class="flex justify-center">
                     <a href="'. route('dashboard.user.edit', $item->id) .'" class="bg-gray-500 text-white rounded-md px-2 py-1 mr-2">
-                        Edit
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
                     </a>
                     <form class="inline-block" action="'. route('dashboard.user.destroy', $item->id) .'" method="POST">
                         <button class="bg-red-500 text-white rounded-md px-2 py-1 mr-2">
-                            Hapus
+                        <i class="fa fa-trash" aria-hidden="true"></i> Hapus
                         </button>
                     '. method_field('delete'). csrf_field() .'
                     </form>

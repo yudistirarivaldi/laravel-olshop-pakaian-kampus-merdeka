@@ -46,7 +46,7 @@
             <div class="mb-10">
                 <a href="{{ route('dashboard.products.create') }}"
                     class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                    Create Product
+                    <i class="fa fa-plus" aria-hidden="true"></i> Create Product
                 </a>
             </div>
             <div class="shadow overflow-hidden sm-rounded-md">

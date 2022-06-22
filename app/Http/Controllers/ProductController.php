@@ -29,15 +29,18 @@ class ProductController extends Controller
             ->addColumn('action', function($item){
                 return '
                 <div class= "flex justify-center">
-                    <a href="'. route('dashboard.products.gallery.index', $item->id) .'" class="bg-gray-800 text-white rounded-md px-2 py-1 mr-2">
-                        Gallery
+                    <a href="'. route('dashboard.products.gallery.index', $item->id) .'" class="bg-gray-800 text-white rounded-md hover:bg-gray-500 px-2 py-1 mr-2">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    Gallery
                     </a>
                     <a href="'. route('dashboard.products.edit', $item->id) .'" class="bg-gray-500 text-white rounded-md px-2 py-1 mr-2">
-                        Edit
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    Edit
                     </a>
                     <form class="inline-block" action="'. route('dashboard.products.destroy', $item->id) .'" method="POST">
                         <button class="bg-red-500 text-white rounded-md px-2 py-1 mr-2">
-                            Hapus
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        Hapus
                         </button>
                     '. method_field('delete'). csrf_field() .'
                     </form>

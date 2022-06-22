@@ -52,3 +52,42 @@
     text-decoration: none;
     color: #ECB390;
 }
+.btn-submit{
+    background-color: #FF5D5D;
+    color: #FFF2F2;
+    font-weight: bold;
+}
+.btn-submit:hover{
+    background-color: #FFF2F2;
+    color: #FF5D5D;
+}
+.text-pyche{
+    color: #FF5D5D;
+}
+h4 {
+    overflow: hidden;
+    text-align: center;
+  }
+
+h4:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: relative;
+    vertical-align: middle;
+    width: 80%;
+  }
+h3 {
+    overflow: hidden;
+  }
+
+h3:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 80%;
+  }

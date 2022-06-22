@@ -43,7 +43,8 @@
 
                             <li class="{{ \Route::current()->getName() == 'shop_list' ? 'active' : '' }}"><a
                                     href="{{ url('/shop') }}">Shop</a></li>
-                            <li><a href="{{ url('/trixie/pages/contact') }}">Contact</a></li>
+                            <li class="{{ \Route::current()->getName() == 'contact' ? 'active' : '' }}">
+                                <a href="{{ url('/contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -78,7 +79,7 @@
                             <li><a href="#"><span class="icon_heart_alt"></span>
                                     <div class="tip">2</div>
                                 </a></li>
-                            <li><a href="{{ url('/shopcart') }}">
+                            <li><a href="{{ __('/cart') }}">
                                     <span class="icon_bag_alt"></span>
                                     <div class="tip">2</div>
                                 </a></li>

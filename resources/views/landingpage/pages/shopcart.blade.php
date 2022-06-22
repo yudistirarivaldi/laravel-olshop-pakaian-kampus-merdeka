@@ -57,7 +57,8 @@
                                             <form action="{{ route('hapusCart', $cart->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button> x</button>
+                                                <button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i>
+                                                </button>
                                             </form>
 
                                         </td>
@@ -65,7 +66,7 @@
                                 @empty
                                     <tr>
                                         <td class="cart__product__item">
-                                            Keranjang kamu kosong..........
+                                            Keranjang kamu masih kosong nih, yuk lihat semua product kita!
                                         </td>
                                     </tr>
                                 @endforelse

@@ -30,7 +30,7 @@ class ProductGalleryController extends Controller
 
                     <form class="flex justify-center" action="'. route('dashboard.gallery.destroy', $item->id) .'" method="POST">
                         <button class="bg-red-500 text-white rounded-md px-2 py-1 mr-2">
-                            Hapus
+                        <i class="fa fa-trash" aria-hidden="true"></i> Hapus
                         </button>
                     '. method_field('delete'). csrf_field() .'
                     </form>

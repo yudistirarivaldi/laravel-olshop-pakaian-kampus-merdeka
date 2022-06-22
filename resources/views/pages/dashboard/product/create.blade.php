@@ -29,8 +29,8 @@
 
                 <div class="mb-4 flex justify-end">
                     <a href="{{ route('dashboard.products.index') }}"
-                        class="bg-indigo-500 hover:bg-red-500 text-white font-bold py-2  px-4 rounded shadow-lg">
-                        back
+                        class="bg-indigo-700 hover:bg-blue-500 text-white font-bold py-2  px-4 rounded shadow-lg">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> back
                         </a>
                 </div>
                 <form action="{{ route('dashboard.products.store') }}" method="POST" class="w-full"
@@ -70,7 +70,7 @@
                         <div class="w-full px-3">
                             <button type="submit"
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                                Save Product
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i> Save Product
                             </button>
                         </div>
                     </div>
