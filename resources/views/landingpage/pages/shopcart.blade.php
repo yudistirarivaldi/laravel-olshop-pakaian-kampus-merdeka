@@ -77,15 +77,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="cart__btn update__btn">
-                        <a href="#"><span class="icon_bag"></span> Checkout</a>
-                    </div>
-                </div>
             </div>
 
             <div class="d-flex justify-content-center mb-5">
@@ -137,8 +128,10 @@
                               <textarea id="textarea" name="textarea" cols="40" rows="4" aria-describedby="textareaHelpBlock" required="required" class="form-control"></textarea>
                               <span id="textareaHelpBlock" class="form-text text-muted">your full address</span>
                             </div>
-                            <div class="form-group d-flex justify-content-center ">
-                              <button name="submit" type="submit" class="btn font-weight-bolder text-monoscope btn-submit px-3">Submit</button>
+                            <div class="form-group d-flex justify-content-center">
+                                    <div class="cart__btn update__btn">
+                                        <a href="#"><span class="icon_bag"></span> Checkout</a>
+                                    </div>
                             </div>
                           </form>
             </div>
