@@ -44,7 +44,8 @@
                             <li class="{{ \Route::current()->getName() == 'shop_list' ? 'active' : '' }}"><a
                                     href="{{ url('/shop') }}">Shop</a></li>
                             <li class="{{ \Route::current()->getName() == 'contact' ? 'active' : '' }}">
-                                <a href="{{ url('/contact') }}">Contact</a></li>
+                                <a href="{{ url('/contact') }}">Contact</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -65,6 +66,30 @@
                                 </a>
                             </div>
 
+                            <ul class="header__right__widget">
+
+                                {{-- Untuk keranjang cart --}}
+
+                                @php
+                                    $carts = \App\Models\Cart::where('users_id', Auth::user()->id)->count();
+                                @endphp
+
+                                @if ($carts > 0)
+                                    <li><a href="{{ __('/cart') }}">
+                                            <span class="icon_bag_alt"></span>
+                                            <div class="tip">{{ $carts }}</div>
+                                        </a></li>
+                                @else
+                                    <li><a href="{{ __('/cart') }}">
+                                            <span class="icon_bag_alt"></span>
+                                            <div class="tip">0</div>
+                                        </a></li>
+                                @endif
+
+
+
+                            </ul>
+
                         @endauth
                         @guest
                             <div class="header__right__auth">
@@ -74,16 +99,9 @@
                         @endguest
 
 
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                    <div class="tip">2</div>
-                                </a></li>
-                            <li><a href="{{ __('/cart') }}">
-                                    <span class="icon_bag_alt"></span>
-                                    <div class="tip">2</div>
-                                </a></li>
-                        </ul>
+
+
+
                     </div>
                 </div>
             </div>
