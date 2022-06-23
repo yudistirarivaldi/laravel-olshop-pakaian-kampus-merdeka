@@ -68,7 +68,7 @@
 
                             <ul class="header__right__widget">
 
-                                {{-- Untuk keranjang cart --}}
+                                {{-- Untuk total keranjang cart --}}
 
                                 @php
                                     $carts = \App\Models\Cart::where('users_id', Auth::user()->id)->count();
@@ -82,7 +82,7 @@
                                 @else
                                     <li><a href="{{ __('/cart') }}">
                                             <span class="icon_bag_alt"></span>
-                                            <div class="tip">0</div>
+
                                         </a></li>
                                 @endif
 
