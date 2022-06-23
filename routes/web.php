@@ -40,6 +40,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::delete('/cart/{id}', [ShopController::class, 'hapusCart'])->name('hapusCart');
 
+    Route::post('/checkout', [ShopController::class, 'checkout'])->name('checkout');
+
+    Route::get('/checkout/success', [ShopController::class, 'success'])->name('success');
+
+
 });
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
