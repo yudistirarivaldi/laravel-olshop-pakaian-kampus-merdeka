@@ -10,20 +10,21 @@
     <title>Trixie</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link href="{{ url('https://fonts.googleapis.com/css2?family=Cookie&display=swap') }}" rel="stylesheet">
+    <link
+        href="{{ url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap') }}"
+        rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('landing/css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/font-awesome.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/elegant-icons.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/jquery-ui.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/slicknav.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/style.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('landing/css/auth.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/jquery-ui.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('landing/css/auth.css') }}" type="text/css">
 </head>
 
 <body>
@@ -38,87 +39,104 @@
     @yield('content')
     <!-- Services Section End -->
 
-<!-- Instagram Begin -->
-<div class="instagram">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-1.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+    <!-- Instagram Begin -->
+    <div class="instagram">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-1.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-2.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-2.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-3.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-3.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-4.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-4.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-5.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-5.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="{{ asset('landing/img/instagram/insta-6.jpg')}}">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
+                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
+                    <div class="instagram__item set-bg"
+                        data-setbg="{{ asset('landing/img/instagram/insta-6.jpg') }}">
+                        <div class="instagram__text">
+                            <i class="fa fa-instagram"></i>
+                            <a href="#">@ ashion_shop</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Instagram End -->
+    <!-- Instagram End -->
 
     @include('landingpage.components.footer')
 
-<!-- Search Begin -->
-<div class="search-model">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="search-close-switch">+</div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
-        </form>
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
     </div>
-</div>
-<!-- Search End -->
+    <!-- Search End -->
 
-<!-- Js Plugins -->
-<script src="{{ asset('landing/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{ asset('landing/js/bootstrap.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery-ui.min.js')}}"></script>
-<script src="{{ asset('landing/js/mixitup.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.countdown.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.slicknav.js')}}"></script>
-<script src="{{ asset('landing/js/owl.carousel.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.nicescroll.min.js')}}"></script>
-<script src="{{ asset('landing/js/main.js')}}"></script>
+    <!-- Js Plugins -->
+    <script src="{{ asset('landing/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('landing/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('landing/js/mixitup.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('landing/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('landing/js/main.js') }}"></script>
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "1b4c9c05-bffa-4a8d-b859-919d2bb09353";
+        (function() {
+            d = document;
+            s = d.createElement("script");
+            s.src = "{{ url('https://client.crisp.chat/l.js') }}";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
 </body>
 
 </html>
