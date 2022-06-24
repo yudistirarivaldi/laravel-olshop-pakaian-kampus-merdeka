@@ -18,7 +18,7 @@ class ShopController extends Controller
     public function index(Request $request)
 
     {
-        $products = Product::with(['galleries'])->latest()->get();
+        $products = Product::with(['galleries'])->latest()->limit(4)->get();
 
         return view('landingpage.home', compact('products'));
     }
