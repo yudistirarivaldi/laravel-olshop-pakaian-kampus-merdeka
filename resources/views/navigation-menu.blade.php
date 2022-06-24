@@ -22,19 +22,19 @@
                         <x-jet-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
                             {{ __('Products') }}
                         </x-jet-nav-link>
-                    @endif
 
-                    @if (Auth::user()->roles == 'ADMIN')
                         <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
                             {{ __('Transaction') }}
                         </x-jet-nav-link>
-                    @endif
 
-                    @if (Auth::user()->roles == 'ADMIN')
                         <x-jet-nav-link href="{{ route('dashboard.user.index') }}" :active="request()->routeIs('dashboard.user.index')">
                             {{ __('User') }}
                         </x-jet-nav-link>
                     @endif
+
+                    <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
+                        {{ __('Transaksi Saya') }}
+                    </x-jet-nav-link>
 
                 </div>
             </div>
@@ -177,25 +177,25 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
 
-            {{-- Update Middleware --}}
+            {{-- Update Middleware untuk navbar --}}
 
             @if (Auth::user()->roles == 'ADMIN')
                 <x-jet-responsive-nav-link href="{{ route('dashboard.products.index') }}" :active="request()->routeIs('dashboard.products.index')">
                     {{ __('Products') }}
                 </x-jet-responsive-nav-link>
-            @endif
 
-            @if (Auth::user()->roles == 'ADMIN')
                 <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
                     {{ __('Transaction') }}
                 </x-jet-nav-link>
-            @endif
 
-            @if (Auth::user()->roles == 'ADMIN')
                 <x-jet-nav-link href="{{ route('dashboard.user.index') }}" :active="request()->routeIs('dashboard.user.index')">
                     {{ __('User') }}
                 </x-jet-nav-link>
             @endif
+
+            <x-jet-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
+                {{ __('Transaksi Saya') }}
+            </x-jet-nav-link>
 
         </div>
 
