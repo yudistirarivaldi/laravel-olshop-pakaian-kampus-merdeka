@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\ShopController;
@@ -30,7 +31,6 @@ Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
 
 // valdiasi untuk landing jadi harus login dulu untuk mengakses route ini
-
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
@@ -56,6 +56,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
+    Route::resource('my-transaction', MyTransactionController::class);
+
+    // Ini hanya dpa di akses oleh admin
     Route::middleware(['admin'])->group(function() {
         Route::resource('products', ProductController::class);
         Route::resource('products.gallery', ProductGalleryController::class)->shallow()->only([

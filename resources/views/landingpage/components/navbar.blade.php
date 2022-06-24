@@ -53,7 +53,7 @@
                     <div class="header__right">
                         @auth
                             <div class="header__right__auth">
-                                <a href="{{ route('login') }}">Dashboard</a>
+                                <a href="{{ route('dashboard.index') }}">Dashboard</a>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                         class="ft-power"></i>
@@ -90,6 +90,7 @@
                             </ul>
 
                         @endauth
+
                         @guest
                             <div class="header__right__auth">
                                 <a href="{{ route('login') }}">Login</a>
