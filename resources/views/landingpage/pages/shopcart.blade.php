@@ -141,7 +141,8 @@
 
                 <div class="form-group d-flex justify-content-center">
                     <div class="cart__btn update__btn">
-                        <button type="submit">Checkout</button>
+                        <button type="submit" class="btn font-weight-bolder text-monoscope btn-submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                             Checkout</button>
                     </div>
                 </div>
 

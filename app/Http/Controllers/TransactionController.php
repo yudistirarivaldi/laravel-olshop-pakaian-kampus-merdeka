@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TransactionExport;
 use App\Http\Requests\TransactionRequest;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Transaction;
 use App\Models\TransactionItem;
+use Maatwebsite\Excel\Facades\Excel;
+use PDF;
+
 
 class TransactionController extends Controller
 {
@@ -26,14 +30,15 @@ class TransactionController extends Controller
             return DataTables::of($query)
             ->addColumn('action', function($item){
                 return '
+                <div class="text-center">
                     <a href="'. route('dashboard.transaction.show', $item->id) .'" class="bg-gray-800 text-white rounded-md px-2 py-1 mr-2">
-                        Detail
+                    <i class="fa fa-eye" aria-hidden="true"></i> Detail
                     </a>
 
                     <a href="'. route('dashboard.transaction.edit', $item->id) .'" class="bg-gray-500 text-white rounded-md px-2 py-1 mr-2">
-                        Edit
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
                     </a>
-
+                    </div>
 
                 ';
             })
@@ -45,6 +50,23 @@ class TransactionController extends Controller
         }
         return view('pages.dashboard.transaction.index');
     }
+    }
+
+    // create controller for pdf generate
+    public function downloadPDF()
+    {
+        // $transaction = DB::table('transaction');
+        $data = Transaction::all();
+        // dd($transaction);
+        $pdf = PDF::loadView('data/dataPDF',  ['data' => $data]);
+
+        return $pdf->download(date('m/y/d').'_transaction.pdf');
+    }
+
+    // aksi untuk excel export
+    public function downloadEXCEL(){
+
+        return Excel::download(new TransactionExport, 'transaction.xlsx');
     }
 
     /**
