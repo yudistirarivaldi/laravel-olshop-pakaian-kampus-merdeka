@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-6 col-sm-7">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="{{ url('/')}}"><img src="{{ asset('landing/img/logo.png')}}" alt=""></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('landing/img/logo.png') }}" alt=""></a>
                     </div>
                     <div class="footer__payment">
                         <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
@@ -20,9 +20,9 @@
                 <div class="footer__widget">
                     <h6>Quick links</h6>
                     <ul>
-                        <li><a href="{{ url('/')}}">Home</a></li>
-                        <li><a href="{{ url('/shop')}}">Shop</a></li>
-                        <li><a href="{{ url('/contact')}}">Contact</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/shop') }}">Shop</a></li>
+                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +47,14 @@
             <div class="col-lg-12">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 <div class="footer__copyright__text">
-                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This project is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/kel-1-Kampus-Merdeka/olshop-pakaian.git" target="_blank">Kelompok 1</a></p>
+                    <p>Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | This project is made with <i class="fa fa-heart"
+                            aria-hidden="true"></i> by <a
+                            href="https://github.com/kel-1-Kampus-Merdeka/olshop-pakaian.git" target="_blank">Kelompok
+                            1 </a>Kampus Merdeka
+                    </p>
                 </div>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>

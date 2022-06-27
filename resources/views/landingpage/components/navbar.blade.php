@@ -40,7 +40,6 @@
 
                             <li class="{{ \Route::current()->getName() == 'index' ? 'active' : '' }}"><a
                                     href="{{ url('/') }}">Home</a></li>
-
                             <li class="{{ \Route::current()->getName() == 'shop_list' ? 'active' : '' }}"><a
                                     href="{{ url('/shop') }}">Shop</a></li>
                             <li class="{{ \Route::current()->getName() == 'contact' ? 'active' : '' }}">

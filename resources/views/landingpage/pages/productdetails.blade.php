@@ -145,7 +145,8 @@
                                     <li><a href="{{ $item->galleries()->exists() ? Storage::url($item->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}"
                                             class="image-popup"><span class="arrow_expand"></span></a></li>
 
-                                    <li><a href="#"><span class="icon_bag_alt"></span></a>
+                                    <li><a href="{{ route('detail', $item->slug) }}"><span
+                                                class="icon_bag_alt"></span></a>
                                     </li>
                                 </ul>
                             </div>
