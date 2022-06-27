@@ -137,6 +137,32 @@
             d.getElementsByTagName("head")[0].appendChild(s);
         })();
     </script>
+    <script>
+        $('.color-btn').click(function() {
+            $('.input-color').css({color: '#FFFFFF', 'background-color': '#FFC3C3'});
+        });
+        </script>
+        {{-- <script type="text/javascript">
+            const search = document.getElementById('search');
+            const tableBody = document.getElementById('product');
+            function getContent(){
+
+            const searchValue = search.value;
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET','{{route('search')}}/?search=' + searchValue ,true);
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                xhr.onreadystatechange = function() {
+
+                    if(xhr.readyState == 4 && xhr.status == 200)
+                    {
+                        tableBody.innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send()
+            }
+            search.addEventListener('input',getContent);
+        </script> --}}
 </body>
 
 </html>

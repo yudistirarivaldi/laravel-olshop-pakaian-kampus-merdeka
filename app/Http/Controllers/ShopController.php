@@ -12,6 +12,7 @@ use Midtrans\Snap;
 use App\Models\Transaction;
 use App\Models\TransactionItem;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 class ShopController extends Controller
 {
@@ -21,6 +22,40 @@ class ShopController extends Controller
         $products = Product::with(['galleries'])->latest()->limit(4)->get();
 
         return view('landingpage.home', compact('products'));
+    }
+
+    public function search(Request $request)
+	{
+		// menangkap data pencarian
+		$search = $request->search;
+    	// mengambil data dari table product sesuai pencarian data
+		$products = Product::where('name', 'like', "%" . $search . "%")->paginate(5);
+
+
+        // mengirim data product ke view index
+        // if($request->ajax()){
+
+        //     $output="";
+		//     $products = Product::where('name', 'like', "%".$request->search."%")->get()->paginate(5);
+        //     if($products){
+        //        foreach ($products as  $product) {
+        //         $output.=
+        //         '<div class="col-lg-3 col-md-6">
+        //         <div class="product__item">
+        //         <div class="product__item__pic set-bg" data-setbg="'. $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' .'">
+        //         <div class="label new">New</div>
+        //         <ul class="product__hover">
+        //         <li><a href="'. $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' .'" class="image-popup"><span class="arrow_expand"></span></a></li>
+        //         <li><a href="'. route('detail', $product->slug) .'"><span class="icon_bag_alt"></span></a></li>
+        //         </ul>
+        //         </div>
+        //         </div>
+        //         </div>';
+        //        }
+        //        return $output;
+        //     }
+		return view('landingpage.pages.shop', compact('products'));
+
     }
 
     public function details(Request $request, $slug)

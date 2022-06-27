@@ -4,6 +4,18 @@
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
+            {{-- search box --}}
+            <form action="{{ route('search')}}" method="GET">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control py-4 input-text input-color text-monospace" placeholder="Search products.."  name="search" aria-label="Recipient's username" aria-describedby="basic-addon2" value="{{ old('search')}}">
+                      <div class="input-group-append">
+                      <button class="btn btn-submit btn-lg color-btn" type="submit"><i class="fa fa-search" ></i></button>
+                      </div>
+                     </div>
+                  </div>
+            </form>
+            {{-- search box --}}
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
@@ -20,9 +32,9 @@
     <section class="shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12" id="product">
                     <div class="row">
-                        @foreach ($products as $product)
+                        @forelse ($products as $product)
                         <div class="col-lg-3 col-md-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' }}">
@@ -45,7 +57,11 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+                        <div class="d-flex justify-content-center">
+                            <div class="h4">Data Yang Kamu Cari Tidak Ditemukan</div>
+                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>

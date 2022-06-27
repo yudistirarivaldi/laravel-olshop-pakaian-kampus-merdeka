@@ -28,6 +28,7 @@ Route::view('/form/transaction', 'landingpage.pages.form');
 Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
+Route::get('/shop', [ShopController::class, 'search'])->name('search');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
 
 // valdiasi untuk landing jadi harus login dulu untuk mengakses route ini
