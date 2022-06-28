@@ -24,7 +24,7 @@
                         <p>Thank you, for ordering our product</p>
                         <!--  Succes page -->
                         <div id="nav-tab-card" class="tab-pane my-5 fade show active">
-                            <a href="{{ url('/trixie') }}" class="btn-mate btn rounded">Back to Home</a>
+                            <a href="{{ route('index') }}" class="btn-mate btn rounded">Back to Home</a>
                         </div>
                         <span class="mt-1">if you have any isuess <a href="{{ url('/trixie/pages/contact') }}"
                                 class="text-footer">contact us</a></span>

@@ -24,6 +24,11 @@ class ShopController extends Controller
         return view('landingpage.home', compact('products'));
     }
 
+    public function success(Request $request)
+    {
+        return view('landingpage.pages.success');
+    }
+
     public function search(Request $request)
 	{
 		// menangkap data pencarian
