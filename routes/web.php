@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
@@ -25,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 //  route for landing
 // Route::view('/form/transaction', 'landingpage.pages.form');
-Route::view('/register-sukses', 'success');
+
 Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
@@ -45,6 +46,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/checkout', [ShopController::class, 'checkout'])->name('checkout');
 
     Route::get('/checkout/success', [ShopController::class, 'success'])->name('success');
+
+    Route::resource('/register-success', RegisterController::class);
 
 
 });

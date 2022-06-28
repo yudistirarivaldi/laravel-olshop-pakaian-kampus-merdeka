@@ -13,18 +13,17 @@
             </div> --}}
             <div class="text-white text-center mt-5 font-mono font-semibold">
                 <div class=" text-2xl">Selamat Registrasi Akun Berhasil!!</div>
-                <div class="text-sm">Mohon Tunggu Admin Sedang verifikasi Akun</div>
 
                 <div class="mt-10">
-                    <a href="{{ __('/')}}" class="rounded-lg hover:text-black">
-                        <i class="fa fa-arrow-left w-2 h-3" aria-hidden="true"></i>&nbsp;Kembali ke Home
+                    <a href="{{ __('/') }}" class="rounded-lg hover:text-black">
+                        <i class="fa fa-arrow-left w-2 h-3" aria-hidden="true"></i>&nbsp;Langsung Belanja
                     </a>
                 </div>
             </div>
         </div>
 
 
-            </div>
+        </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
