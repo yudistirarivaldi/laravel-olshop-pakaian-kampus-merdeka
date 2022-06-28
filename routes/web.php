@@ -24,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //  route for landing
-Route::view('/form/transaction', 'landingpage.pages.form');
+// Route::view('/form/transaction', 'landingpage.pages.form');
+Route::view('/register-sukses', 'success');
 Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
 Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');

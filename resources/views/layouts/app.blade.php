@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('landing/css/font-awesome.min.css')}}" type="text/css">
 
 
+
     <link href="{{ url('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ url('https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css') }}"
         rel="stylesheet">
