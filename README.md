@@ -23,7 +23,8 @@ git clone https://github.com/kel-1-Kampus-Merdeka/olshop-pakaian.git
 #### install all depedencies using npm
 ```
 npm install && npm run dev
-<sub>run watch for running the tailwind engine</sub>
+
+run watch for running the tailwind engine 
 npm run watch 
 ```
 
