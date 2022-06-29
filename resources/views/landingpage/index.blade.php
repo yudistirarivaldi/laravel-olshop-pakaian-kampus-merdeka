@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('landing/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('landing/css/auth.css') }}" type="text/css">
+    <link rel="icon" href="{{ asset('landing/img/logo.png') }}" type="image/icon type">
 </head>
 
 <body>
@@ -139,10 +140,13 @@
     </script>
     <script>
         $('.color-btn').click(function() {
-            $('.input-color').css({color: '#FFFFFF', 'background-color': '#FFC3C3'});
+            $('.input-color').css({
+                color: '#FFFFFF',
+                'background-color': '#FFC3C3'
+            });
         });
-        </script>
-        {{-- <script type="text/javascript">
+    </script>
+    {{-- <script type="text/javascript">
             const search = document.getElementById('search');
             const tableBody = document.getElementById('product');
             function getContent(){
