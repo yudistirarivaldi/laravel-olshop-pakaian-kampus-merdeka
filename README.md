@@ -36,7 +36,7 @@ npm run watch
 - **[Yudistira Rivaldi](https://www.linkedin.com/in/yudistira-rivaldi-141819212)**
 - **[Pugud Pambudi](https://www.linkedin.com/in/pugud-pambudi-b30171231/)**
 - **[Sariah](https://www.linkedin.com/in/sariah-605174229)**
-- **[Rahmat Dian Rifai]()**
+- **[Rahmat Dian Rifai](https://www.instagram.com/_dianrfai)**
 
 ## Contributing
 
