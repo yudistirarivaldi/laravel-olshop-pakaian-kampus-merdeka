@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('landing/css/auth.css') }}" type="text/css">
     <link rel="icon" href="{{ asset('landing/img/logo.png') }}" type="image/icon type">
+    <script>
+        $(function() {
+            $("#menu").menu();
+        });
+    </script>
 </head>
 
 <body>
@@ -49,7 +54,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-1.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +63,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-2.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +72,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-3.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +81,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-4.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>
@@ -85,7 +90,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-5.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>
@@ -94,7 +99,7 @@
                         data-setbg="{{ asset('landing/img/instagram/insta-6.jpg') }}">
                         <div class="instagram__text">
                             <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
+                            <a href="#">@ Trixie_FashionStore</a>
                         </div>
                     </div>
                 </div>

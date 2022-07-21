@@ -3,37 +3,35 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Midtrans\Config;
 use Midtrans\Notification;
+use App\Models\Transaction;
 
 class MidtransController extends Controller
 {
     public function callback()
     {
-        // set konfigutarasi midtrans notification
-        // ngambil dari services.php
+        // set konfigurasi midtrans
         Config::$serverKey = config('services.midtrans.serverKey');
         Config::$isProduction = config('services.midtrans.isProduction');
         Config::$isSanitized = config('services.midtrans.isSanitized');
         Config::$is3ds = config('services.midtrans.is3ds');
 
-        // instance midtrans notification
+        // buat instance midtrans notifications
         $notification = new Notification();
 
-        // lempar ke variabel
+        // assign ke variable untuk memudahkan coding
         $status = $notification->transaction_status;
         $type = $notification->payment_type;
         $fraud = $notification->fraud_status;
         $order_id = $notification->order_id;
 
-        // ngambil transaciton ID
-        // dengan cara dipisahkan dengan tanda -
-        $order = explode('-', $order_id); //output ['trixie', '1']
+        // get transaction id //ngambil order id yaitu dengan memecah menggunakan explode
+        $order = explode('-', $order_id);
 
-        // cari transaksi
-        $transaction = Transaction::findOrFail($order[1]); //kenapa satu karena ngambil array id di atas
+        // cari transaksi id
+        $transaction = Transaction::findOrFail($order[1]); //kenapa 1 karena ngambil id dari array ['TRX','4']
 
         // handle notification midtrans
         if($status == 'capture') {
@@ -78,8 +76,6 @@ class MidtransController extends Controller
                 'message' => 'Midtrans Notification Success'
             ]
             ]);
-
-
 
     }
 }

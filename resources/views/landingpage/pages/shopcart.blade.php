@@ -5,13 +5,13 @@
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__links">
-                        <a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a>
-                        <span>Shopping cart</span>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="breadcrumb__links">
+                            <a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a>
+                            <span>Shopping cart</span>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
@@ -82,8 +82,7 @@
 
         <div class="d-flex justify-content-center mb-5">
 
-            <h4 class="font-weight-bolder text-monoscope text-pyche ">Form Transaction</h4>
-            <div class="line"></div>
+            <h3 class="font-weight-bolder text-monoscope text-pyche ">Form Transaction</h3>
         </div>
 
         <div class="container">
@@ -148,9 +147,14 @@
 
             </form>
 
+            <div class="cart__btn update__btn ">
+                <a href="{{ __('shop')}}" class="btn font-weight-bolder text-monoscope btn-submit"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                     Back to Shop</a>
+            </div>
         </div>
 
         </div>
+
     </section>
     <!-- Shop Cart Section End -->
 @endsection

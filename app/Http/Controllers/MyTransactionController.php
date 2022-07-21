@@ -83,7 +83,6 @@ class MyTransactionController extends Controller
                 ->editColumn('product.price', function($item){
                     return number_format($item->product->price);
                 })
-
                 ->make();
        }
 

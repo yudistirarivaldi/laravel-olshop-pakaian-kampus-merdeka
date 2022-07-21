@@ -19,9 +19,16 @@ class ShopController extends Controller
     public function index(Request $request)
 
     {
-        $products = Product::with(['galleries'])->latest()->limit(4)->get();
+        $products = Product::with(['galleries'])->latest()->limit(8)->get();
 
         return view('landingpage.home', compact('products'));
+    }
+
+    public function shop_list(Request $request){
+
+        $products = Product::with(['galleries'])->latest()->limit(50)->get();
+
+        return view('landingpage.pages.shop', compact('products'));
     }
 
     public function success(Request $request)
@@ -34,7 +41,7 @@ class ShopController extends Controller
 		// menangkap data pencarian
 		$search = $request->search;
     	// mengambil data dari table product sesuai pencarian data
-		$products = Product::where('name', 'like', "%" . $search . "%")->paginate(5);
+		$products = Product::where('name', 'like', "%" . $search . "%")->paginate(50);
 
 
         // mengirim data product ke view index
@@ -71,12 +78,15 @@ class ShopController extends Controller
         return view('landingpage.pages.productdetails', compact('product', 'recomendations'));
     }
 
-    public function shop_list(Request $request){
+    public function products(Request $request, $slug)
+    {
+        $product = Product::with(['galleries'])->where('slug', $slug)->firstOrFail();
+        $recomendations = Product::with(['galleries'])->inRandomOrder()->limit(4)->get();
 
-        $products = Product::with(['galleries'])->latest()->get();
-
-        return view('landingpage.pages.shop', compact('products'));
+        return view('landingpage.pages.shopcart', compact('product', 'recomendations'));
     }
+
+
 
      public function cart(Request $request)
     {
@@ -150,7 +160,7 @@ class ShopController extends Controller
                 'first_name' => $transaction->name,
                 'email' => $transaction->email,
             ],
-            'enabled_payments' => ['gopay', 'bank_transfer'],
+            'enabled_payments' => ['gopay', 'bank_transfer', 'alfamart', 'shopeepay', 'indomaret'],
             'vtweb' => []
         ];
 

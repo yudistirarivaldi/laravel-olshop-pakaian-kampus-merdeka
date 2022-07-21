@@ -138,6 +138,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        $product->galleries()->delete();
 
         toast('Success Delete Data Product','success');
         return redirect()->route('dashboard.products.index');

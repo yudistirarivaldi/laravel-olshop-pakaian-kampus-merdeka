@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/contact', 'landingpage.pages.contact')->name('contact');
 Route::get('/', [ShopController::class, 'index'])->name('index');
-Route::get('/shop', [ShopController::class, 'shop_list'])->name('shop_list');
+Route::get('/shop_list', [ShopController::class, 'shop_list'])->name('shop_list');
 Route::get('/shop', [ShopController::class, 'search'])->name('search');
 route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail');
 
@@ -37,6 +37,7 @@ route::get('/details/{slug}', [ShopController::class, 'details'])->name('detail'
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
+    // Route::get('/cart', ShopController::class);
 
     // untuk buat order cart
     Route::post('/cart/{id}', [ShopController::class, 'tambahCart'])->name('tambahCart');
@@ -61,7 +62,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-    Route::resource('my-transaction', MyTransactionController::class);
+        Route::middleware(['user'])->group(function() {
+            Route::resource('my-transaction', MyTransactionController::class);
+        });
+
+
 
     // Ini hanya dpa di akses oleh admin
     Route::middleware(['admin'])->group(function() {
@@ -78,4 +83,4 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
 // route for generate pdf
 Route::get('/generate-pdf', [TransactionController::class, 'downloadPDF']);
 Route::get('/generate-excel', [TransactionController::class, 'downloadEXCEL']);
-
+Route::view('error', 'landingpage.components.404');

@@ -58,6 +58,7 @@ class TransactionController extends Controller
         // $transaction = DB::table('transaction');
         $data = Transaction::all();
         // dd($transaction);
+        // kalo hosting $pdf = PDF::loadView('data/datapdf',  ['data' => $data]);
         $pdf = PDF::loadView('data/dataPDF',  ['data' => $data]);
 
         return $pdf->download(date('m/y/d').'_transaction.pdf');
